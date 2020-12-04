@@ -621,8 +621,9 @@ class Plotter:
             name = var_name
 
         data = self._get_values(name)
-        # if name does not exist in the variables or parameters or is unused
-        if data is None:
+        # if name does not exist in the variables or parameters or is unused, or
+        # empty dict is returned (e.g., unused SOC_INTER) -> empty dict is False
+        if data is None or not data:
             return None, None
 
         # If the index of the data is not a tuple (e.g. for SOC_INTER) simply

@@ -133,7 +133,7 @@ class EnergySystem:
         self.periods_order = [0]
         self.period_occurrences = [1]
         self.number_of_time_steps_per_period = number_of_time_steps
-        self.inter_period_time_steps = [0, 1]  # one before & after only period
+        self.inter_period_time_steps = []
 
         # Flag 'is_data_clustered' indicates if the function 'cluster' has been
         # called before. The flag is reset to False if new components are added.
@@ -427,11 +427,10 @@ class EnergySystem:
         in time before, after or between regular time steps inside of a period.
         Hence, the second value runs from 0 to "number_of_time_steps" (without
         aggregation) or "number_of_time_steps_per_period" respectively. |br|
-        The third set "intra_period_time_set" is one-dimensional and ranges from
-        0 to the overall number of periods plus 1. So if no aggregation is used
-        it has only two entries [0, 1]. Otherwise is is ranging from 0 to
-        (1 + number_of_time_steps / number_of_time_steps_per_period). |br|
-        The "typical_periods_set" is a set ranging from 0 to the number of
+        The third set "inter_period_time_set" is one-dimensional and ranges from
+        0 to the overall number of periods plus 1 (1 + number_of_time_steps /
+        number_of_time_steps_per_period). It is empty if no aggregation is used.
+        |br| The "typical_periods_set" is a set ranging from 0 to the number of
         typical periods. If no aggregation is used it only holds 0. |br|
 
         E.g.: Case with 2 periods and 3 time steps per period |br|
@@ -463,7 +462,7 @@ class EnergySystem:
             self.periods_order = [0]
             self.period_occurrences = [1]
             self.number_of_time_steps_per_period = self.number_of_time_steps
-            self.inter_period_time_steps = [0, 1]
+            self.inter_period_time_steps = []
             self.typical_periods = [0]
 
             # Define sets: Only period "0" exists
