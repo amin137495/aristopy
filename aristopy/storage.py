@@ -190,10 +190,10 @@ class Storage(Component):
                          alternative_set='inter_period_time_set')
             if not self.precise_inter_period_modeling:
                 self.add_var(utils.SOC_MAX, has_time_set=False,
-                             alternative_set='typical_periods_set',
+                             alternative_set='soc_min_max_set',
                              domain='Reals')
                 self.add_var(utils.SOC_MIN, has_time_set=False,
-                             alternative_set='typical_periods_set',
+                             alternative_set='soc_min_max_set',
                              domain='Reals')
 
         # Last step: Add the component to the EnergySystem instance

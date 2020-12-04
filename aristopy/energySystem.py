@@ -509,6 +509,17 @@ class EnergySystem:
         model.typical_periods_set = pyo.Set(
             initialize=self.typical_periods, ordered=True)
 
+        # Add a set only valid for the variables "SOC_MIN" and "SOC_MAX" in the
+        # storage class. They are created if "use_inter_period_formulation=True"
+        # and "precise_inter_period_modeling=False" but only needed if clustered
+        # data is used (use same set as "typical_periods_set"). Else: Leave set
+        # emtpy. Reason: Some solvers require more time with unused variables.
+        if not use_clustered_data:
+            model.soc_min_max_set = pyo.Set(initialize=[])
+        else:
+            model.soc_min_max_set = pyo.Set(
+                initialize=self.typical_periods, ordered=True)
+
     def declare_objective(self, model):
         """
         Method to declare the objective function of the optimization problem.
