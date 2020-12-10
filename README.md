@@ -111,7 +111,7 @@ https://aristopy.readthedocs.io/en/latest/index.html) on readthedocs.org.
 
 If you have questions, found a bug, or want to contribute to the development
 of *aristopy*, you are invited to open an issue or contact the developers
-(stefan-bruche@tu-berlin.de).
+(stefan.bruche@tu-berlin.de).
 
 ## License
 [MIT License](https://opensource.org/licenses/MIT)
