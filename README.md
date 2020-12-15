@@ -1,3 +1,5 @@
+[![Version](https://img.shields.io/pypi/v/aristopy.svg)](https://pypi.org/project/aristopy/) [![DOI](https://zenodo.org/badge/272495107.svg)](https://zenodo.org/badge/latestdoi/272495107) [![Documentation Status](https://readthedocs.org/projects/aristopy/badge/?version=latest)](https://aristopy.readthedocs.io/en/latest/) [![MIT license](https://img.shields.io/pypi/l/tsam)](https://github.com/sbruche/aristopy/blob/master/LICENSE.txt)
+
 <a href="https://www.energietechnik.tu-berlin.de/menue/forschung/energiesystemanalyse_und_optimierung/oeb_ensys/">
 <img src="https://raw.githubusercontent.com/sbruche/aristopy/master/docs/misc/aristopy_logo.png" alt="aristopy logo" width="300px"/></a>
 
